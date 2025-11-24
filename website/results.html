@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Results – Global Bus Accessibility Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Global Bus Accessibility Analysis</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../website/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Project Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../website/methods.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../website/results.html" aria-current="page"> 
+<span class="menu-text">Results</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cities" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cities">    
+        <li>
+    <a class="dropdown-item" href="../website/city_nyc.html">
+ <span class="dropdown-text">New York City</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website/city_sg.html">
+ <span class="dropdown-text">Singapore</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website/city_ams.html">
+ <span class="dropdown-text">Amsterdam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website/city_sh.html">
+ <span class="dropdown-text">Shanghai</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../website/data_sources.html"> 
+<span class="menu-text">Data Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Results</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="comparative-stats" class="level1">
+<h1>Comparative Stats</h1>
+<p>This section presents a cross-city comparison of bus stop density and walk-based accessibility indicators. While the underlying methods are consistent across all cities, interpretation must consider each city’s unique transit system design, land-use context, and service philosophy.</p>
+<hr>
+<section id="bus-stop-density" class="level2">
+<h2 class="anchored" data-anchor-id="bus-stop-density">1. Bus stop density</h2>
+<p>The figure below compares bus stop density (stops per km²) across the four cities.</p>
+<p><img src="../figures/density_bar_chart.png" class="img-fluid"></p>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation"><strong>Interpretation</strong></h3>
+<p>The four cities show substantial variation in bus stop density:</p>
+<ul>
+<li><p><strong>Singapore (6.58 stops/km²)</strong> has the <strong>highest density</strong>, reflecting<br>
+its highly planned, fully government-coordinated trunk–feeder system.<br>
+Singapore’s Land Transport Authority places stops at regular intervals (~200–400 m), creating a uniformly fine-grained bus network optimized for walkability and MRT transfer.</p></li>
+<li><p><strong>Amsterdam (4.7 stops/km²)</strong> also exhibits a <strong>dense stop pattern</strong>,<br>
+especially within its compact historical core. Its transit system is multi-modal (bus + tram + metro), and bus services supplement tram corridors, producing dense central coverage.</p></li>
+<li><p><strong>Shanghai (3.34 stops/km²)</strong> appears moderate, but the number masks its huge geographic area (6955 km²).<br>
+Within the dense central districts (Puxi/Pudong), stop spacing is actually very tight, but the municipal boundary includes vast low-density industrial and rural zones, lowering the citywide average.</p></li>
+<li><p><strong>New York City (2.48 stops/km²)</strong> shows the lowest density.<br>
+NYC buses primarily serve as a surface transit network parallel to the extensive subway system. Additionally, wide arterial blocks—especially in Manhattan and parts of Queens/Brooklyn—naturally result in fewer intersections and therefore fewer stop locations.</p></li>
+</ul>
+</section>
+<section id="key-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaway"><strong>Key takeaway</strong></h3>
+<p>Bus stop density reflects <strong>urban form</strong> and <strong>planning philosophy</strong>, not merely transit supply:</p>
+<ul>
+<li><em>Centralised planning → uniform high density (Singapore)</em><br>
+</li>
+<li><em>Historic compactness + multimodal layering → medium high (Amsterdam)</em><br>
+</li>
+<li><em>Very large administrative boundaries → moderate composite density (Shanghai)</em><br>
+</li>
+<li><em>Subway-dominant network → lower bus density (NYC)</em></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="density-summary-table" class="level2">
+<h2 class="anchored" data-anchor-id="density-summary-table">2. Density summary table</h2>
+<p>The table summarises total area, number of stops, and density for each city.</p>
+<p><img src="../figures/density_summary_table.png" class="img-fluid"></p>
+<section id="interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-1"><strong>Interpretation</strong></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 31%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>City</th>
+<th>Area (km²)</th>
+<th>Stops</th>
+<th>Density (per km²)</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>NYC</strong></td>
+<td>1362.7</td>
+<td>3381</td>
+<td>2.48</td>
+<td>Low density, reflecting subway dominance; buses fill gaps in outer boroughs more than the Manhattan core.</td>
+</tr>
+<tr class="even">
+<td><strong>Singapore</strong></td>
+<td>784.9</td>
+<td>5161</td>
+<td>6.58</td>
+<td>National-level planning produces evenly distributed stops and short spacing.</td>
+</tr>
+<tr class="odd">
+<td><strong>Amsterdam</strong></td>
+<td>243.7</td>
+<td>1145</td>
+<td>4.70</td>
+<td>Small, dense city with complementary tram/bus system.</td>
+</tr>
+<tr class="even">
+<td><strong>Shanghai</strong></td>
+<td>6955.7</td>
+<td>23229</td>
+<td>3.34</td>
+<td>High bus supply diluted across enormous urban–rural municipal territory.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="urban-structure-explanation" class="level3">
+<h3 class="anchored" data-anchor-id="urban-structure-explanation"><strong>Urban-structure explanation</strong></h3>
+<ul>
+<li><p><strong>Administrative scale is critical</strong>:<br>
+Shanghai’s area is nearly <strong>30× Amsterdam</strong> but does not have 30× more stops.</p></li>
+<li><p><strong>Modal hierarchy affects bus density</strong>:<br>
+Cities where buses are <em>primary transport</em> (Singapore) naturally build higher stop density than cities where buses provide coverage between rail corridors (NYC).</p></li>
+<li><p><strong>Street pattern differences</strong>:</p>
+<ul>
+<li>Grid-like cities (NYC) → fewer intersections per km²<br>
+</li>
+<li>Organic/medieval European cores (Amsterdam) → more intersections → more stop opportunities</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="detailed-accessibility-indicators" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-accessibility-indicators">3. Detailed accessibility indicators</h2>
+<p>This table reports 500 m coverage, covered area, and nearest-neighbour distance statistics for each city.</p>
+<p><img src="../figures/detailed_accessibility_summary.png" class="img-fluid"></p>
+<section id="high-level-findings" class="level3">
+<h3 class="anchored" data-anchor-id="high-level-findings"><strong>High-level findings</strong></h3>
+<p>Despite strong differences in bus stop density, <strong>all four cities achieve similar 500 m walking coverage (55–57%)</strong>.<br>
+This is an important insight:<br>
+📌 <em>High density does not automatically translate into proportionally higher coverage.</em></p>
+</section>
+<section id="interpretation-by-metric" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-by-metric"><strong>Interpretation by metric</strong></h3>
+<hr>
+</section>
+<section id="a.-500m-coverage-ratio-5557" class="level3">
+<h3 class="anchored" data-anchor-id="a.-500m-coverage-ratio-5557"><strong>A. 500m coverage ratio (55–57%)</strong></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 42%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>City</th>
+<th>Coverage Ratio</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Amsterdam (56.8%)</strong></td>
+<td>Slightly highest due to dense centre and small municipal area—bus stops can reach a large share of the city surface.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>NYC (56.1%)</strong></td>
+<td>Despite low stop density, NYC achieves good coverage because built-up land is concentrated and bus routes traverse dense blocks.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Singapore (55.9%)</strong></td>
+<td>Even planning leads to consistent accessibility island-wide.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Shanghai (55.2%)</strong></td>
+<td>Similar coverage, but diluted by massive suburban/rural tracts.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why similar?</strong><br>
+Large uninhabited land (NYC parks, Shanghai farmland, Amsterdam waterways)<br>
+dilutes the ratio when calculated using <em>full administrative boundaries</em>.</p>
+<p>Thus, <strong>coverage of populated areas is likely much higher</strong>.</p>
+<hr>
+</section>
+<section id="b.-covered-area-km²" class="level3">
+<h3 class="anchored" data-anchor-id="b.-covered-area-km²"><strong>B. Covered area (km²)</strong></h3>
+<p>Unsurprisingly dominated by city size:</p>
+<ul>
+<li><strong>Shanghai (3840 km²)</strong> dwarfs the others—indicating extensive surface transit.<br>
+</li>
+<li><strong>NYC (764.6 km²)</strong> also large due to long bus corridors through Bronx, Queens, and Brooklyn.<br>
+</li>
+<li><strong>Singapore (438.7 km²)</strong> matches its compact island size.<br>
+</li>
+<li><strong>Amsterdam (138.3 km²)</strong> is smallest but proportionally highly accessible.</li>
+</ul>
+<hr>
+</section>
+<section id="c.-nearest-neighbour-distance" class="level3">
+<h3 class="anchored" data-anchor-id="c.-nearest-neighbour-distance"><strong>C. Nearest-neighbour distance</strong></h3>
+<p>This metric reflects <strong>bus stop spacing</strong>, a strong indicator of walkability.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 46%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>City</th>
+<th>Mean NN Dist (m)</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Amsterdam (63 m)</strong></td>
+<td>Exceptionally short spacing; bus and tram stops form a tight mesh.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Singapore (79 m)</strong></td>
+<td>Short and regular stop spacing consistent with national standards.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Shanghai (91 m)</strong></td>
+<td>Dense inner-city spacing but wider intervals in outer districts.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>NYC (183 m)</strong></td>
+<td>Longest spacing; wide blocks and the presence of the subway reduce need for close bus spacing.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>90th percentile</strong> values reinforce this pattern:</p>
+<ul>
+<li><strong>NYC 393 m</strong> → Large variations between dense Manhattan vs.&nbsp;wide Queens/Brooklyn arterials<br>
+</li>
+<li><strong>Amsterdam 134 m</strong>, <strong>Singapore 161 m</strong> → Stable, predictable spacing<br>
+</li>
+<li><strong>Shanghai 201 m</strong> → Reflects mixed urban/suburban structure</li>
+</ul>
+<hr>
+</section>
+<section id="d.-interpreting-the-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="d.-interpreting-the-patterns"><strong>D. Interpreting the patterns</strong></h3>
+<ul>
+<li><p>Cities with <strong>integrated multimodal systems</strong> (Amsterdam, Singapore) show<br>
+<strong>uniformly short nearest-neighbour distances</strong> and fine-grained coverage.</p></li>
+<li><p><strong>NYC’s long NN distances</strong> are a direct function of:</p>
+<ul>
+<li>subway dominance,</li>
+<li>large block lengths,</li>
+<li>a bus system designed for coverage—not fine-grained walkability.</li>
+</ul></li>
+<li><p><strong>Shanghai’s mixed-range NN distances</strong> reflect:</p>
+<ul>
+<li>highly urbanized districts with dense stops,</li>
+<li>large exurban areas with coarse spacing.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="summary-of-cross-city-insights" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-cross-city-insights"><strong>Summary of Cross-city Insights</strong></h2>
+<section id="high-density-high-coverage" class="level3">
+<h3 class="anchored" data-anchor-id="high-density-high-coverage"><strong>1. High density ≠ high coverage</strong></h3>
+<p>All four cities achieve similar 500 m coverage despite large differences in stop density.</p>
+</section>
+<section id="transit-philosophy-shapes-the-network" class="level3">
+<h3 class="anchored" data-anchor-id="transit-philosophy-shapes-the-network"><strong>2. Transit philosophy shapes the network</strong></h3>
+<ul>
+<li><em>Singapore</em>: Regular spacing due to planned trunk–feeder design<br>
+</li>
+<li><em>Amsterdam</em>: Tight spacing in compact historic fabric<br>
+</li>
+<li><em>NYC</em>: Bus network plays secondary role next to subway<br>
+</li>
+<li><em>Shanghai</em>: Municipal boundaries hide large intra-city variation</li>
+</ul>
+</section>
+<section id="nearest-neighbour-distances-reveal-more-than-density" class="level3">
+<h3 class="anchored" data-anchor-id="nearest-neighbour-distances-reveal-more-than-density"><strong>3. Nearest-neighbour distances reveal more than density</strong></h3>
+<p>NN distance is a better indicator of street-level accessibility than raw density.</p>
+<hr>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

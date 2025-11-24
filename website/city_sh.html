@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Shanghai – Global Bus Accessibility Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Global Bus Accessibility Analysis</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../website/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Project Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../website/methods.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../website/results.html"> 
+<span class="menu-text">Results</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cities" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cities">    
+        <li>
+    <a class="dropdown-item" href="../website/city_nyc.html">
+ <span class="dropdown-text">New York City</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website/city_sg.html">
+ <span class="dropdown-text">Singapore</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website/city_ams.html">
+ <span class="dropdown-text">Amsterdam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../website/city_sh.html">
+ <span class="dropdown-text">Shanghai</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../website/data_sources.html"> 
+<span class="menu-text">Data Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Shanghai</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="bus-stops-and-boundary" class="level1">
+<h1>1. Bus stops and boundary</h1>
+<p><img src="../figures/sh_bus_stops.png" class="img-fluid"></p>
+<p>The point map shows an extremely dense web of bus stops across Shanghai’s main urban area. The coverage is close to continuous in the historic Puxi core and along major corridors extending towards the south and southeast. By contrast, the western and southern edges of the polygon appear much more weakly served, with clear gaps between linear clusters of stops.</p>
+<p>A key <strong>data limitation</strong> is visible here. The boundary used for Shanghai comes from an open-data administrative layer that includes substantial areas of water, port land, industrial space and peri-urban green space. In addition, the polygon only represents the <strong>main built-up municipality</strong>, not the outer islands such as Chongming or Changxing. In the processing pipeline, only the polygon containing the largest number of bus stops was retained as the “city” boundary, in order to make Shanghai comparable with the other cities’ compact urban footprints.</p>
+<p>This choice has two implications:</p>
+<ul>
+<li>Some land inside the boundary is not actually urbanised, which <strong>dilutes density metrics</strong> (stops per km²) relative to the intensity of development.</li>
+<li>Outlying districts and islands with their own local bus systems are <strong>excluded from the analysis</strong>, so the maps focus on the metropolitan core rather than the full municipality.</li>
+</ul>
+<p>These caveats are important when interpreting the comparative results: Shanghai’s bus system appears less dense than Singapore or Amsterdam partly because its reference area is much larger and more heterogeneous.</p>
+</section>
+<section id="m-coverage" class="level1">
+<h1>2. 500 m coverage</h1>
+<p><img src="../figures/sh_coverage_500m.png" class="img-fluid"></p>
+<p>The 500 m coverage map shows that most of the built-up portion of the polygon lies within walking distance of at least one bus stop. The red dots (stops) are embedded in a near-continuous layer of buffers, especially in the central north–south axis and in the eastern “fan” that spreads across Pudong.</p>
+<p>From the summary table, Shanghai’s 500 m coverage ratio is about <strong>0.55</strong> (55.2% of the city area within 500 m of a stop). This value is very similar to the other three cities (all between 55% and 57%), indicating that in terms of <strong>areal coverage</strong>, Shanghai is competitive despite its much larger total area (about 6956 km²). The high coverage is largely driven by intense stop spacing in the core districts, while the more weakly served fringe contributes relatively little to the numerator but a lot to the denominator.</p>
+<p>Compared with:</p>
+<ul>
+<li><strong>New York City</strong>, where coverage is also ~56% but over a more fragmented archipelago, Shanghai’s coverage comes from a <strong>single, continuous urban sheet</strong> rather than multiple boroughs separated by water.</li>
+<li><strong>Singapore</strong>, with a similar coverage share but smaller land area, Shanghai achieves comparable coverage despite more dispersed development and significant non-urban land inside the boundary.</li>
+<li><strong>Amsterdam</strong>, where coverage is slightly higher (56.8%) in a compact municipality, Shanghai’s figure is notable given the presence of rural and industrial tracts within the city polygon.</li>
+</ul>
+<p>Thus, the 500 m results suggest that <strong>spatial equity in basic bus access is not dramatically worse in Shanghai</strong> than in the benchmark cities, even though the visual impression of empty fringe areas might suggest otherwise.</p>
+</section>
+<section id="kernel-density-heatmap" class="level1">
+<h1>3. Kernel density heatmap</h1>
+<p><img src="../figures/sh_kde_bw350.png" class="img-fluid"></p>
+<p>The KDE heatmap reveals the <strong>internal hierarchy</strong> of Shanghai’s bus stop network. High-intensity “ridges” of density run:</p>
+<ul>
+<li>north–south through the historic core of Puxi, roughly aligned with major arterial roads and metro corridors,</li>
+<li>east–west towards the inner ring and Lujiazui, capturing the radial orientation of routes feeding the central business district,</li>
+<li>southward towards emerging sub-centres and new towns.</li>
+</ul>
+<p>Unlike Amsterdam, where density peaks are tightly clustered around a relatively small inner core, Shanghai exhibits a <strong>broad plateau of medium–high density</strong> punctuated by multiple hot spots. This pattern is consistent with Shanghai’s role as a <strong>polycentric megacity</strong>, where employment and activity are no longer confined to a single CBD.</p>
+<p>When compared with Singapore’s heatmap, Shanghai looks less uniformly bright: Singapore’s island-wide planning and strong trunk-feeder structure produce an almost continuous field of high density. In Shanghai, <strong>historic street grids, redevelopment patches and industrial belts</strong> introduce more variability, with some corridors substantially better served than adjacent neighbourhoods.</p>
+<p>The KDE heatmap is therefore useful not only for identifying hotspots but also for revealing <strong>structural differences in network design</strong>:</p>
+<ul>
+<li>A coarse radial-plus-grid system in Shanghai, with strong trunks along expressways and major arterials.</li>
+<li>Finer-grained island-wide coverage in Singapore.</li>
+<li>Dense central cluster with suburban spokes in Amsterdam.</li>
+<li>Borough-based, legacy networks in New York.</li>
+</ul>
+</section>
+<section id="nearest-neighbour-distances" class="level1">
+<h1>4. Nearest-neighbour distances</h1>
+<p><img src="../figures/sh_nearest_neighbor.png" class="img-fluid"></p>
+<p>The nearest-neighbour (NN) histogram for Shanghai is heavily skewed towards short distances: most stops lie within <strong>50–150 m</strong> of their nearest neighbour, with a heavy tail extending beyond 300 m. From the summary statistics:</p>
+<ul>
+<li><strong>Mean NN distance:</strong> ~91 m<br>
+</li>
+<li><strong>Median NN distance:</strong> ~56 m<br>
+</li>
+<li><strong>90th percentile (p90):</strong> ~201 m</li>
+</ul>
+<p>These values indicate that <strong>for the majority of stops, inter-stop spacing is relatively tight</strong>, consistent with dense linear routes along major corridors and local streets. At the same time, the long tail in the histogram and a maximum distance exceeding 1200 m reveal a subset of <strong>isolated or peripheral stops</strong>—likely at the very edge of the urbanised area or on radial highways.</p>
+<p>In comparative perspective:</p>
+<ul>
+<li>Shanghai’s mean NN distance (~91 m) is <strong>shorter than New York’s</strong> (~183 m), reflecting more closely spaced stops and a stronger emphasis on fine-grained local access rather than high-speed bus travel.</li>
+<li>It is <strong>longer than Amsterdam’s</strong> (~63 m) and <strong>slightly longer than Singapore’s</strong> (~80 m), which both combine compact geography with strong transit-oriented planning and, in Amsterdam’s case, a dense tram network.</li>
+<li>The median NN distance for Shanghai (56 m) is very close to Amsterdam’s and Singapore’s, suggesting that <strong>typical inner-city stop spacing is comparable</strong>, while the longer tail for Shanghai is driven by a few sparse peripheral corridors.</li>
+</ul>
+<p>Spatially, the NN map shows the shortest distances (dark colours on the legend) clustered in the <strong>historic core and key radial corridors</strong>, while longer distances appear on:</p>
+<ul>
+<li>the southwestern and southern fringes, where urban expansion meets agricultural or industrial land,</li>
+<li>some large infrastructure corridors and bridges where stops are closely tied to interchange nodes rather than local street blocks.</li>
+</ul>
+<p>These patterns reflect Shanghai’s <strong>rapid outward urbanisation</strong>, where transit infrastructure often precedes fine-grained local street integration.</p>
+<section id="shanghai-bus-network-transit-reference" class="level2">
+<h2 class="anchored" data-anchor-id="shanghai-bus-network-transit-reference">5. Shanghai bus network (transit reference)</h2>
+<p><img src="../image/Shanghai_Lines.png" class="img-fluid" style="width:100.0%"></p>
+<p><em>Image source: Google Maps Transit – Shanghai urban and suburban bus routes.</em></p>
+<p>The Google Transit bus-line map complements the stop-based analysis by illustrating the <strong>route structure</strong> of Shanghai’s bus system. Several features stand out:</p>
+<ul>
+<li>A <strong>dense radial web</strong> centred on the inner districts of Puxi and the Hongqiao–Xujiahui–Lujiazui axis, where multiple overlapping routes follow major arterials.</li>
+<li><strong>Ring-like corridors</strong> roughly aligned with the inner and middle ring roads, supporting tangential movements that do not pass through the historic core.</li>
+<li>Strong <strong>east–west and north–south trunks</strong> extending into Pudong and towards satellite towns, where routes run along major expressways and only gradually branch into local grids.</li>
+<li>Noticeable <strong>gaps over water and non-urban land</strong> (e.g.&nbsp;wetlands, port zones, agricultural areas), which correspond to the empty regions seen along the edges of the analytical boundary.</li>
+</ul>
+<p>When juxtaposed with the KDE and NN maps, this line map helps explain why coverage remains high despite the low overall density of stops:</p>
+<ul>
+<li>The presence of many <strong>overlapping routes in the core</strong> produces very short NN distances and high KDE values.</li>
+<li>Outermost corridors are <strong>long and relatively straight</strong>, with stops spaced further apart, which shows up as the long tail in the NN histogram but contributes little to the coverage ratio because many of these segments run through low-density or industrial land.</li>
+</ul>
+<p>Compared with other cities:</p>
+<ul>
+<li>Shanghai’s network resembles <strong>New York’s</strong> in having strong radial trunks and some long express-like corridors, but the <strong>stop spacing is much tighter</strong> and the overall pattern is more grid-like in the inner city.</li>
+<li>Relative to <strong>Singapore</strong>, Shanghai exhibits less systematic trunk-feeder hierarchy and more overlapping services along the same streets, reflecting incremental service additions rather than a single island-wide redesign.</li>
+<li>In contrast to <strong>Amsterdam</strong>, where tram and bus routes concentrate on a compact historic centre with clearly delimited suburbs, Shanghai’s route map illustrates the <strong>scale of its polycentric megacity</strong>, with multiple dense clusters connected by high-capacity radial lines.</li>
+</ul>
+</section>
+</section>
+<section id="data-limitations-and-interpretation" class="level1">
+<h1>6. Data limitations and interpretation</h1>
+<p>For Shanghai, several data limitations are particularly important:</p>
+<ul>
+<li>The <strong>city boundary includes substantial non-urban land</strong> (water bodies, industrial zones, peri-urban green space). This tends to <strong>underestimate bus stop density</strong> and may overstate the share of “unserved” area along the periphery.</li>
+<li>Only the <strong>largest built-up polygon</strong> was included in the analysis, meaning that <strong>outer islands and some exurban districts are excluded</strong>. As a result, the findings are most appropriately interpreted as relating to <strong>Shanghai’s main metropolitan core</strong>, not the full municipal territory.</li>
+<li>Bus stops close to <strong>metro or suburban rail interchanges</strong> are mapped as points only; the analysis does not explicitly model multimodal accessibility, which is crucial in a metro-rich city like Shanghai.</li>
+</ul>
+<p>Despite these limitations, comparing Shanghai to New York, Singapore and Amsterdam under a <strong>consistent 500 m coverage and NN framework</strong> yields several robust insights:</p>
+<ul>
+<li>In terms of <strong>basic spatial access</strong> (share of land within 500 m of a bus stop), Shanghai performs similarly to the other cities, even though its urban area is much larger and more heterogeneous.</li>
+<li>Shanghai’s <strong>internal structure</strong>—a combination of radial trunks, ring roads and emerging sub-centres—is clearly reflected in the KDE and NN patterns, differentiating it from Singapore’s island-wide uniformity and Amsterdam’s compact monocentric form.</li>
+<li>The city’s rapid outward growth generates a <strong>dual structure</strong>: very dense inner-city service with short NN distances, alongside more sparsely served fringe corridors. This duality suggests that future improvements could focus on <strong>filling gaps in newly urbanised areas</strong> and <strong>rationalising overlapping routes</strong> in the saturated core.</li>
+</ul>
+<p>Overall, Shanghai’s bus system, as captured by this dataset, sits somewhere between <strong>European compact-city density</strong> and <strong>North American metropolitan scale</strong>. Recognising the limitations of the boundary and the focus on the main urban polygon is essential for drawing fair comparisons and for grounding any policy recommendations that might be derived from these maps.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
