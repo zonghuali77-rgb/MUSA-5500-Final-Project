@@ -54,7 +54,7 @@ A concise outline of the analytical workflow:
 3. **Accessibility and network metrics**
    - Bus stop **point density** (KDE) at multiple spatial scales.
    - **Nearest-neighbour distance** statistics for stops within each city.
-   - Coverage analysis using buffer distances to approximate walk-sheds.
+   - Coverage analysis using **Euclidean buffer & Network Buffer** distances to approximate walk-sheds.
    - Simple city-level indicators (e.g., stops per km² of built-up area) for cross-city comparison.
 
 4. **Visualization and communication**
