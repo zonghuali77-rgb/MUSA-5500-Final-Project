@@ -65,7 +65,7 @@ A concise outline of the analytical workflow:
 
 ## 📁 File Structure
 
-Key folders and files in this repository, mostly under `_site` file (except this one and ipynb one):
+Key folders and files in this repository, mostly under `docs` file (except this one and ipynb one):
 
 - `data/`  
   Raw and processed spatial data, including city boundaries, bus stop point layers, and intermediate GIS outputs (e.g., GeoJSON, shapefiles).
